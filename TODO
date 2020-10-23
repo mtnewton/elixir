@@ -1,0 +1,28 @@
+Convert to using original $discord->on event calls
+Dockerize
+Host it
+Connect a db (illuminate/database) postgress in hasura for now
+Allow for servers to specify desired prefix
+
+
+Add character statistics, inventory
+!start command to give startting items?
+add equiped items
+add locations
+ability to move locations
+moving takes time? longer for farther distances
+
+
+gathering skills at locations
+skilling gives items over time and xp
+
+processing skills at locations
+
+combat
+
+achievements
+
+quests
+
+server/global boss fights - group combat
+global events
