@@ -1,0 +1,14 @@
+{
+    "name": "mtnewton/elixir",
+    "description": "Discord game. Adventure, skills, loot!",
+    "type": "project",
+    "homepage": "https://github.com/mtnewton/elixir",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Marvin Newton",
+            "email": "elixir@mtnewton.net"
+        }
+    ],
+    "require": {}
+}
