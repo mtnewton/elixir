@@ -16,7 +16,7 @@ class SayCommand extends Command
 
     public static function getDescription()
     {
-        return 'echo';
+        return 'Repeat whatever is said';
     }
 
     public static function getSubCommands() 

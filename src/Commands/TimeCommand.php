@@ -17,7 +17,7 @@ class TimeCommand extends Command
 
     public static function getDescription()
     {
-        return 'Returns the current time';
+        return 'Returns the current time, optionally pass a timezone';
     }
 
     public function execute()    

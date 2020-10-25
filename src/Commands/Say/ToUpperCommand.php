@@ -16,7 +16,7 @@ class ToUpperCommand extends Command
 
     public static function getDescription()
     {
-        return 'ECHO';
+        return 'Repeat whatever is said in uppercase';
     }
 
     public function execute()

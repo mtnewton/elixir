@@ -5,6 +5,7 @@ namespace MTNewton\Elixir\Helpers;
 use Discord\Discord;
 use Discord\Parts\Channel\Message;
 use Discord\Parts\Guild\Guild;
+use Throwable;
 
 class Commands
 {
@@ -48,8 +49,12 @@ class Commands
             }
 
             if ($commandToRun) {
-                $response = $commandToRun->execute();
-                $message->channel->sendMessage($response);
+                try {
+                    $response = $commandToRun->execute();
+                    $message->channel->sendMessage($response);
+                } catch (Throwable $t) {
+                    Log::exception($t);
+                }
                 return;
             }
 

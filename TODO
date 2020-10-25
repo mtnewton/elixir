@@ -1,7 +1,7 @@
-help command
 Dockerize
 Host it
 Connect a db (illuminate/database) postgress in hasura for now
+how to handle migrations
 Allow for servers to specify desired prefix
 
 

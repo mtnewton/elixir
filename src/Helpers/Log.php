@@ -2,7 +2,7 @@
 
 namespace MTNewton\Elixir\Helpers;
 
-use Exception;
+use Throwable;
 
 class Log
 {
@@ -11,13 +11,13 @@ class Log
         static::log('INFO', is_scalar($message) ? $message : json_encode($message));
     }
 
-    public static function exception(Exception $e) 
+    public static function exception(Throwable $t) 
     {        
         static::log('EXCEPTION', json_encode([
-            'message' => $e->getMessage(),
-            'file' => $e->getFile(),
-            'line' => $e->getLine(),
-            'trace' => $e->getTrace(),
+            'message' => $t->getMessage(),
+            'file' => $t->getFile(),
+            'line' => $t->getLine(),
+            'trace' => $t->getTrace(),
         ]));
     }
 
