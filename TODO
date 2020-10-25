@@ -1,4 +1,4 @@
-Convert to using original $discord->on event calls
+help command
 Dockerize
 Host it
 Connect a db (illuminate/database) postgress in hasura for now

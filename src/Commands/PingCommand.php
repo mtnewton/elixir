@@ -5,9 +5,11 @@ namespace MTNewton\Elixir\Commands;
 class PingCommand extends Command
 {
     
-    public static function getCommandName()
+    public static function getAliases()
     {
-        return 'ping';
+        return [
+            'ping'
+        ];
     }
 
     public static function getDescription()
@@ -15,7 +17,7 @@ class PingCommand extends Command
         return 'pong!';
     }
 
-    public static function execute($message, $params)
+    public function execute() 
     {
         return 'pong!';
     }

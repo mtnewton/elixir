@@ -13,7 +13,9 @@
     "require": {
         "team-reflex/discord-php": "^5.0",
         "vlucas/phpdotenv": "^5.2",
-        "illuminate/support": "^8.11"
+        "illuminate/support": "^8.11",
+        "symfony/polyfill-php80": "^1.19",
+        "nesbot/carbon": "^2.41"
     },
     "autoload": {
         "psr-4": {

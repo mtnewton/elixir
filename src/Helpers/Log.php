@@ -23,7 +23,7 @@ class Log
 
     public static function debug($message)
     {
-        if (Config::get('log.debug')){
+        if (Env::get('log.debug')){
             static::log('DEBUG', is_scalar($message) ? $message : json_encode($message));
         }
     }

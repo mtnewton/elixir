@@ -3,14 +3,15 @@
 namespace MTNewton\Elixir\Commands\Say;
 
 use MTNewton\Elixir\Commands\Command;
-use MTNewton\Elixir\Helpers\Log;
 
 class ToUpperCommand extends Command  
 {
     
-    public static function getCommandName()
+    public static function getAliases()
     {
-        return 'toupper';
+        return [
+            'toupper'
+        ];
     }
 
     public static function getDescription()
@@ -18,8 +19,8 @@ class ToUpperCommand extends Command
         return 'ECHO';
     }
 
-    public static function execute($message, $params)
+    public function execute()
     {
-        return strtoupper(implode(' ', $params));
+        return strtoupper($this->getContentWithoutCommands());
     }
 }

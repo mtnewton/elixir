@@ -1,22 +1,28 @@
 <?php
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
-use MTNewton\Elixir\Helpers\Config;
+use Discord\Discord;
+use MTNewton\Elixir\Helpers\Env;
 use Dotenv\Dotenv;
-use Discord\DiscordCommandClient;
 use MTNewton\Elixir\Helpers\Commands;
 use MTNewton\Elixir\Helpers\Log;
 
 $dotenv = Dotenv::createImmutable(__DIR__ . '/..');
 $dotenv->load();
 
-$discord = new DiscordCommandClient([
-    'token' => Config::get('discord.token'),
-    'prefix' => Config::get('discord.prefix'),
+$discord = new Discord([
+    'token' => Env::get('discord.token'),
 ]);
 
-Commands::register($discord);
+$discord->on('ready', function ($discord) {
+    // $discord->on('message', function ($message) {
+    //     Log::debug("Recieved a message from {$message->author->username}: {$message->content}");
+    // });
+    Commands::register($discord); 
+    Log::info('Bot is ready!');
+});
+
 
 Log::info('Starting Bot!');
 

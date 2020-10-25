@@ -6,22 +6,17 @@ use MTNewton\Elixir\Commands\Say\ToUpperCommand;
 
 class SayCommand extends Command
 {
-    
-    public static function getCommandName()
+    public static function getAliases() 
     {
-        return 'say';
+        return [
+            'say',
+            'echo',
+        ];
     }
 
     public static function getDescription()
     {
         return 'echo';
-    }
-
-    public static function getAliases() 
-    {
-        return [
-            'echo',
-        ];
     }
 
     public static function getSubCommands() 
@@ -31,8 +26,8 @@ class SayCommand extends Command
         ];
     }
 
-    public static function execute($message, $params)
+    public function execute()    
     {
-        return implode(' ', $params);
+        return $this->getContentWithoutCommands();
     }
 }
