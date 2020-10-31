@@ -17,12 +17,12 @@ class Commands
         $discord->on('message', function (Message $message) use ($discord){
             self::logMessage($message);
             self::handle($discord, $message);
-        }
+        });
     }
 
     public static function handle(Discord $discord, Message $message): void
     {
-        if (self::isMyOwnMessage($message, $discord)) || (self::isNotMyGuildPrefix($message)) {
+        if (self::isMyOwnMessage($message, $discord) || self::isNotMyGuildPrefix($message)) {
             return;
         }
         
@@ -51,7 +51,7 @@ class Commands
         while(!empty($commands)) {
             foreach ($commands as $command) {
                 Log::debug("Checking command: {$command} against {$alias}");
-                if ($command::matchesAlias($alias) {
+                if ($command::matchesAlias($alias)) {
                     Log::debug("Matched command: {$command}");
                     $commandToRun = new $command($alias, $message, $commandToRun);
                     $content = self::getNextContent($content, $alias);
@@ -69,7 +69,7 @@ class Commands
     public static function logMessage(Message $message): void
     {
         Log::debug("Recieved a message from {$message->author->username}: {$message->content}");
-    )
+    }
 
     public static function isMyOwnMessage(Message $message, Discord $discord): boolean
     {
