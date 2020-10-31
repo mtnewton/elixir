@@ -23,7 +23,7 @@ abstract class Command
     
     abstract public static function getAliases();
 
-    public static function matchesAlias(string $alias, string $content)
+    public static function matchesAlias(string $alias)
     {
         Log::debug('Aliases: ' . json_encode(static::getAliases()));
         foreach (static::getAliases() as $a) {
